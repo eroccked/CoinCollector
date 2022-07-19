@@ -1,0 +1,3 @@
+C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\Definitions.CoinCollector.h
+A:\UE\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+A:\UE\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

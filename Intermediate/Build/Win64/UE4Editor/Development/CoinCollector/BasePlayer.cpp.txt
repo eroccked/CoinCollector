@@ -1,0 +1,3 @@
+C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\Definitions.CoinCollector.h
+C:\Users\erocc\Desktop\CoinCollectorStarter\Source\CoinCollector\BasePlayer.h
+C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Inc\CoinCollector\BasePlayer.generated.h

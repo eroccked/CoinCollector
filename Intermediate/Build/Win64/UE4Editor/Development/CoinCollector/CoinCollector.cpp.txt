@@ -1,0 +1,2 @@
+C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\Definitions.CoinCollector.h
+C:\Users\erocc\Desktop\CoinCollectorStarter\Source\CoinCollector\CoinCollector.h
