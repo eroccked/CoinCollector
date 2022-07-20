@@ -3,6 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/StaticMeshComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 #include "GameFramework/Pawn.h"
 #include "BasePlayer.generated.h"
 
@@ -24,6 +27,13 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override; 
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UStaticMeshComponent* Mesh;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	USpringArmComponent* SpringArm;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UCameraComponent* Camera;
 
 };

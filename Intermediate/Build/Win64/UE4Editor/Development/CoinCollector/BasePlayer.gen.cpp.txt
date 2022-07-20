@@ -2,4 +2,8 @@ C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\D
 A:\UE\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 A:\UE\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\erocc\Desktop\CoinCollectorStarter\Source\CoinCollector/BasePlayer.h
+A:\UE\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
+A:\UE\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
+A:\UE\UE_4.27\Engine\Source\Runtime\Engine\Classes\Camera/CameraComponent.h
+A:\UE\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CameraComponent.generated.h
 C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Inc\CoinCollector\BasePlayer.generated.h
