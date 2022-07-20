@@ -35,5 +35,18 @@ public:
 	USpringArmComponent* SpringArm;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UCameraComponent* Camera;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float MovementForce;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float JumpImpulse;
+
+
+	void MoveUp(float Value);
+	void MoveRight(float Value);	
+
+
+	UFUNCTION(BlueprintImplementableEvent) //BlueprintNativeEvent якщо хочу орбити реалізацію в С++, а не в БП
+	void Jump();
 
 };

@@ -17,11 +17,95 @@ void EmptyLinkFunctionForGeneratedCodeBaseCoin() {}
 	COINCOLLECTOR_API UClass* Z_Construct_UClass_ABaseCoin();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_CoinCollector();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ABaseCoin::execOnOverlap)
+	{
+		P_GET_OBJECT(AActor,Z_Param_OverlappedActorm);
+		P_GET_OBJECT(AActor,Z_Param_OtherActor);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnOverlap_Implementation(Z_Param_OverlappedActorm,Z_Param_OtherActor);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseCoin::execPlayCustomDeath)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->PlayCustomDeath();
+		P_NATIVE_END;
+	}
+	static FName NAME_ABaseCoin_OnOverlap = FName(TEXT("OnOverlap"));
+	void ABaseCoin::OnOverlap(AActor* OverlappedActorm, AActor* OtherActor)
+	{
+		BaseCoin_eventOnOverlap_Parms Parms;
+		Parms.OverlappedActorm=OverlappedActorm;
+		Parms.OtherActor=OtherActor;
+		ProcessEvent(FindFunctionChecked(NAME_ABaseCoin_OnOverlap),&Parms);
+	}
 	void ABaseCoin::StaticRegisterNativesABaseCoin()
 	{
+		UClass* Class = ABaseCoin::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "OnOverlap", &ABaseCoin::execOnOverlap },
+			{ "PlayCustomDeath", &ABaseCoin::execPlayCustomDeath },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics
+	{
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OverlappedActorm;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::NewProp_OverlappedActorm = { "OverlappedActorm", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BaseCoin_eventOnOverlap_Parms, OverlappedActorm), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BaseCoin_eventOnOverlap_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::NewProp_OverlappedActorm,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::NewProp_OtherActor,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCoin.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCoin, nullptr, "OnOverlap", nullptr, nullptr, sizeof(BaseCoin_eventOnOverlap_Parms), Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCoin_OnOverlap()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCoin_OnOverlap_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCoin.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCoin, nullptr, "PlayCustomDeath", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCoin_PlayCustomDeath()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCoin_PlayCustomDeath_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ABaseCoin_NoRegister()
 	{
@@ -30,6 +114,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCoin() {}
 	struct Z_Construct_UClass_ABaseCoin_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -52,6 +137,10 @@ void EmptyLinkFunctionForGeneratedCodeBaseCoin() {}
 	UObject* (*const Z_Construct_UClass_ABaseCoin_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_CoinCollector,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ABaseCoin_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABaseCoin_OnOverlap, "OnOverlap" }, // 2430156731
+		{ &Z_Construct_UFunction_ABaseCoin_PlayCustomDeath, "PlayCustomDeath" }, // 1957140801
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseCoin_Statics::Class_MetaDataParams[] = {
@@ -95,11 +184,11 @@ void EmptyLinkFunctionForGeneratedCodeBaseCoin() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ABaseCoin_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABaseCoin_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -114,7 +203,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCoin() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABaseCoin, 528509075);
+	IMPLEMENT_CLASS(ABaseCoin, 2042977199);
 	template<> COINCOLLECTOR_API UClass* StaticClass<ABaseCoin>()
 	{
 		return ABaseCoin::StaticClass();

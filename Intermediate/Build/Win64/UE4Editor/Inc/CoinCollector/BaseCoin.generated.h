@@ -8,14 +8,36 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef COINCOLLECTOR_BaseCoin_generated_h
 #error "BaseCoin.generated.h already included, missing '#pragma once' in BaseCoin.h"
 #endif
 #define COINCOLLECTOR_BaseCoin_generated_h
 
 #define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_SPARSE_DATA
-#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS
-#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS \
+	virtual void OnOverlap_Implementation(AActor* OverlappedActorm, AActor* OtherActor); \
+ \
+	DECLARE_FUNCTION(execOnOverlap); \
+	DECLARE_FUNCTION(execPlayCustomDeath);
+
+
+#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void OnOverlap_Implementation(AActor* OverlappedActorm, AActor* OtherActor); \
+ \
+	DECLARE_FUNCTION(execOnOverlap); \
+	DECLARE_FUNCTION(execPlayCustomDeath);
+
+
+#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_EVENT_PARMS \
+	struct BaseCoin_eventOnOverlap_Parms \
+	{ \
+		AActor* OverlappedActorm; \
+		AActor* OtherActor; \
+	};
+
+
+#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_CALLBACK_WRAPPERS
 #define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseCoin(); \
@@ -59,13 +81,17 @@ public: \
 
 
 #define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_PRIVATE_PROPERTY_OFFSET
-#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_10_PROLOG
+#define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_10_PROLOG \
+	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_EVENT_PARMS
+
+
 #define CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_PRIVATE_PROPERTY_OFFSET \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_SPARSE_DATA \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS \
+	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_CALLBACK_WRAPPERS \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_INCLASS \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_STANDARD_CONSTRUCTORS \
 public: \
@@ -78,6 +104,7 @@ public: \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_PRIVATE_PROPERTY_OFFSET \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_SPARSE_DATA \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_CALLBACK_WRAPPERS \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_INCLASS_NO_PURE_DECLS \
 	CoinCollectorStarter_Source_CoinCollector_BaseCoin_h_13_ENHANCED_CONSTRUCTORS \
 private: \

@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-CoinCollector-8696.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\CoinCollectorEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\BaseCoin.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\BasePlayer.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\CoinCollector.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\BaseCoin.gen.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\BasePlayer.gen.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\CoinCollector.init.gen.cpp.obj"
+"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\Default.rc2.res"
+/OUT:"C:\Users\erocc\Desktop\CoinCollectorStarter\Intermediate\Build\Win64\UE4Editor\Development\CoinCollector\UE4Editor-CoinCollector-8696.lib"

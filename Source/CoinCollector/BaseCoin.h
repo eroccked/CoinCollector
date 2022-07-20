@@ -14,9 +14,10 @@ class COINCOLLECTOR_API ABaseCoin : public AActor
 	
 public:	
 	// Sets default values for this actor's properties
-	ABaseCoin();
+	
 
 protected:
+	ABaseCoin();
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -37,5 +38,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float RotationRate;
 
+	UFUNCTION(BlueprintCallable)
 	void PlayCustomDeath();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnOverlap(AActor* OverlappedActorm, AActor* OtherActor);
 };
